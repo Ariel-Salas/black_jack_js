@@ -159,6 +159,6 @@ btnDetener.addEventListener('click', ()=>{
 
 });
 
-const funcion =123;
+const funcion =1234;
 
 // turnoComputadora(21);
