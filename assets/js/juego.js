@@ -91,10 +91,10 @@ const turnoComputadora=(puntosJugador)=> {
     divCartasComputadora.append(imgCarta);
     imgCarta.classList.add('carta');
 
-        if(puntosJugador > 21 ){
+        if(puntosMinimos > 21 ){
             break;
         }
-    }while( (puntosComputadora < puntosJugador)&& (puntosJugador<=21));
+    }while( (puntosComputadora < puntosMinimos)&& (puntosMinimos<=21));
 
     setTimeout(() => {
         
@@ -120,8 +120,8 @@ const valor = valorCarta(pedirCarta());
 btnPedir.addEventListener('click', ()=>{
     const carta=pedirCarta();
     puntosJugador=puntosJugador+valorCarta(carta);
-    //console.log(puntosJugador);
     puntosHTML[0].innerText=puntosJugador;
+    
     const imgCarta= document.createElement('img');
     imgCarta.src  = `assets/cartas/${carta}.png`;
     divCartasJugador.append(imgCarta);
@@ -129,20 +129,15 @@ btnPedir.addEventListener('click', ()=>{
     
 
     if(puntosJugador> 21 ){
-
         console.warn('Perdiste');
         btnPedir.disabled=true;
         btnDetener.disabled = true;
         turnoComputadora(puntosJugador);
-        
     }else if (puntosJugador===21){
         console.warn('21!')
         btnPedir.disabled=true;
         btnDetener.disabled = true;
-
         turnoComputadora(puntosJugador);
-
-
     }
 
 
@@ -159,6 +154,6 @@ btnDetener.addEventListener('click', ()=>{
 
 });
 
-const funcion =1234;
+// const funcion =1234;
 
 // turnoComputadora(21);
